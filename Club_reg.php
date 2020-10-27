@@ -96,10 +96,39 @@
                         <td><input type="text"placeholder="Postal/Zip Code"></td>
                     </tr>
                     <tr>
+                        <td>Date of Birth: </td>
+                        <td>
+                            <select name="dob_day" id="dob_day">
+                                <option value="" disabled selected>Day</option>
+                                <?php
+                                    for ($i=1; $i <= 31; $i++) { 
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                    }
+                                ?>
+                            </select>
+                            <select name="dob_month" id="dob_month">
+                                <option value="" disabled selected>Month</option>
+                                <?php
+                                    for ($i=1; $i <= 12; $i++) { 
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                    }
+                                ?>
+                            </select>
+                            <select name="dob_year" id="dob_year">
+                                <option value="" disabled selected>Year</option>
+                                <?php
+                                    for ($i=1920; $i <= 2020; $i++) { 
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                    }
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Gender: <?php echo $err_gender;?></td>
                         <td>
                             <input type="radio" name="gender" value="Male"> Male
-                            <input type="radio" name="gender" value="Female"> Female
+                            <input type="radio" name="gender" value="Female">Female
                         </td>
                     </tr>
                     <tr>
@@ -122,5 +151,5 @@
             </fieldset>
         </form>
     </body>
-    
+  
 </html>
