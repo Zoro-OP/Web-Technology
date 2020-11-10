@@ -1,4 +1,27 @@
 <?xml version="1.0"?>
 <books>
-
+  <book>
+    <bookname>Claymore</bookname>
+    <category>Manga</category>
+    <desc>Claymore is a manga series written and illustrated by Jonathan. It has been serialized in Shueisha's Weekly Shōnen Jump magazine since July 1993, with its individual chapters compiled into 97 tankōbon volumes as of September 2020. </desc>
+    <publisher>Jonathan</publisher>
+    <edition>11th</edition>
+    <isbn>bte23456</isbn>
+    <pages>2949</pages>
+    <price>$400</price>
+    <image>../resource_files/book_default.png</image>
+    <type>book</type>
+  </book>
+  <book>
+    <bookname>Fairy Tail</bookname>
+    <category>Anime</category>
+    <desc>Fairy Tail (stylized as FAIRY TAIL) is a Japanese manga series written and illustrated by Hiro Mashima. It was serialized in Kodansha's Weekly Shōnen Magazine from August 2006 to July 2017, with the individual chapters collected and published into 63 tankōbon volumes. The story follows the adventures of Natsu Dragneel, a member of the popular wizard[a] guild Fairy Tail, as he searches the fictional world of Earth-land for the dragon Igneel.</desc>
+    <publisher>Shinji Ishihira</publisher>
+    <edition>12th</edition>
+    <isbn>Dragneel</isbn>
+    <pages>2450</pages>
+    <price>$1500</price>
+    <image>../resource_files/book_default.png</image>
+    <type>book</type>
+  </book>
 </books>

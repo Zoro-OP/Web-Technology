@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 
-<?php
- session_start();
- if (!isset($_SESSION["logged_in"] ))
- {
-
-    header("Location: ../html_files/login.php");
-
- }
- if ($_SESSION["logged_in"]!=true && isset($_SESSION["logged_in"] ))
- {
-   header("Location: ../html_files/login.php");
- }
-
-
-?>
+<?php include_once "../php_files/redirect_login.php" ;?>
 
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Dashboard</title>
+      <link rel="stylesheet" href="../css_files/dashboard.css"></head>
   </head>
   <body>
-    <h1>Welcome  <?php echo $_SESSION["username"]; ?></h1>
-  </body>
+    <div class="container">
+  <img src="../resource_files/headerlogo1.jpg" alt="background_header">
+  <div class="centered"><h1>Book Store</h1></div>
+</div>
+<table id="book_table" border="1" class-"container">
+  <tr>
+    <td colspan="7"> <a href="add_book.php"> Add New Book</td>
+
+  </tr>
+
+  <tr>
+    <th> SR. NO </th>
+      <th> NAME  </th>
+        <th> PUBLISHER  </th>
+          <th> ISBN </th>
+            <th> PRICE </th>
+              <th>IMAGE  </th>
+                <th> DELETE </th>
+ </tr>
+
+<?php include_once "../php_files/booklist.php" ;?>
+
+</table>
+</body>
 </html>

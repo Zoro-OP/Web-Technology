@@ -1,13 +1,15 @@
 <?php
 $fullname = $error_fullname = $username = $error_username = $password =$error_password  = $error_confirm_password = "";
-$error_gender = $email = $error_email = $phone_no = $error_phone_no  = $error_city = "";
 $error_gender = $email = $error_email = $phone_no = $error_phone_no  = $error_city = $city= "";
 $hasError = false;
 function PassNum()
 {
+
     $x = (strpos($_POST["password"], '1') + strpos($_POST["password"], '2') + strpos($_POST["password"], '3') + strpos($_POST["password"], '4') + strpos($_POST["password"], '5') + strpos($_POST["password"], '6') + strpos($_POST["password"], '7') + strpos($_POST["password"], '8') + strpos($_POST["password"], '9') + strpos($_POST["password"], '0'));
-    return $x > 0; 
-    
+
+    return $x > 0;
+}
+
 	if(isset($_POST["register"])){
 		if(empty($_POST["fullname"])){
 			$error_fullname="Full name required";
@@ -16,6 +18,8 @@ function PassNum()
 		else{
 			$fullname = htmlspecialchars($_POST["fullname"]);
 		}
+
+
 		if (empty($_POST["username"]))
 	{
 			$error_username = "*Username required";
@@ -35,6 +39,8 @@ function PassNum()
 	{
 			$username = htmlspecialchars($_POST["username"]);
 	}
+
+
 	if (empty($_POST["password"]))
 	 {
 			 $error_password = "*Password required";
@@ -45,6 +51,7 @@ function PassNum()
 			 $error_password = "*Password must be 8 characters long";
 			 $hasError = true;
 	 }
+
 	 elseif (!PassNum())
 	 {
 			 $error_password = "*Password must contain a number ";
@@ -56,6 +63,8 @@ function PassNum()
         $hasError = true;
     }
 
+
+
     else
     {
 			if (strpos($_POST["password"], '#') == false && strpos($_POST["password"], '?') == false )
@@ -66,17 +75,18 @@ function PassNum()
 			if	(strpos($_POST["password"], '#') == true ) {
 				  $password = htmlspecialchars($_POST["password"]);
 					$hasError = false;
+
 			}
+
 			if (strpos($_POST["password"], '?') == true )
 			{
 				  $password = htmlspecialchars($_POST["password"]);
 					$hasError = false;
 			}
+
     }
 
-
-
-		 if (empty ($_POST["password_repeated"]))
+ if (empty ($_POST["password_repeated"]))
 			{
 						 $error_confirm_password = "Repeat password. ";
 					$hasError = true;
@@ -120,10 +130,6 @@ if (empty($_POST["gender"]))
 			$hasError = true;
 	}
 	elseif (strpos($_POST["email"], '@') == false || strrpos($_POST["email"], '.') == false || (strrpos($_POST["email"], '.') < strpos($_POST["email"], '@')))
-	
-
-		if(empty ($_POST["pass"])){
-			$err_pass="Password Required";
 	{
 			$error_email = "*Valid email required";
 			$hasError = true;
@@ -138,25 +144,29 @@ if (empty($_POST["gender"]))
 				$error_city = "*City  required";
 				$hasError = true;
 		}
-		else{
-			$pass=htmlspecialchars($_POST["pass"]);
 		else
 		{
 				$city = htmlspecialchars($_POST["city"]);
 		}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 		if(!$hasError){
-			$users = simplexml_load_file("data.xml");
 			$users = simplexml_load_file("../xml_files/admins.xml");
 
 			$user = $users->addChild("user");
-			$user->addChild("username",$uname);
-			$user->addChild("password",$pass);
-			$user->addChild("type","user");
-			echo "<pre>";
-			print_r($users);
-			echo "</pre>";
 			$user->addChild("username",$username);
 			$user->addChild("password",$password);
 			$user->addChild("gender",$gender);
@@ -166,13 +176,18 @@ if (empty($_POST["gender"]))
 					$user->addChild("type","user");
 
 
+
+
+
+
+
+
 			$xml = new DOMDocument("1.0");
 			$xml->preserveWhiteSpace=false;
 			$xml->formatOutput= true;
 			$xml->loadXML($users->asXML());
 
 
-			$file = fopen("data.xml","w");
 			$file = fopen("../xml_files/admins.xml","w");
 			fwrite($file,$xml->saveXML());
 
