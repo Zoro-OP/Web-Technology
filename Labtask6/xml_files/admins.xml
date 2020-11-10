@@ -1,9 +1,31 @@
 <?xml version="1.0"?>
 <admins>
   <user>
-  <username>abs</username>
-  <password>tbs</password>
+  <username>Zoro</username>
+  <password>ABC</password>
   <type>user</type>
 </user>
 
+    <username>Zoro</username>
+    <password>ABC</password>
+    <type>user</type>
+  </user>
+  <user>
+    <username>Shurzo</username>
+    <password>abcd@123</password>
+    <gender>Male</gender>
+    <email>shoaibhossain207@gmail.com</email>
+    <phone>12345</phone>
+    <city>Dhaka</city>
+    <type>user</type>
+  </user>
+  <user>
+    <username>Shurzo</username>
+    <password>abcd@123</password>
+    <gender>Male</gender>
+    <email>shoaibhossain207@gmail.com</email>
+    <phone>12345</phone>
+    <city>Dhaka</city>
+    <type>user</type>
+  </user>
 </admins>

@@ -1,6 +1,5 @@
 <?php
-
-$xml=simplexml_load_file("../xml_files/admins.xml");
+	$xml=simplexml_load_file("../xml_files/admins.xml");
 	$users = $xml->user;
 	$flag=false;
 	if( (isset($_POST['password']) )&&(isset($_POST['username']))){
@@ -9,13 +8,12 @@ $xml=simplexml_load_file("../xml_files/admins.xml");
 	$flag=true;
 	session_start();
 	$_SESSION["logged_in"] = True;
+	$_SESSION["logged_in"] = true;
   $_SESSION["username"] = $_POST['username'];
 	}
 }
 }
-
 	if($flag){
-
 		header("Location: ../html_files/dashboard.php");
 	}else{
 		if( (isset($_POST['password']) )&&(isset($_POST['username']))){
@@ -23,6 +21,4 @@ $xml=simplexml_load_file("../xml_files/admins.xml");
 	}
 	else{ echo "Provide credentials.";}
 	}
-
-
 ?>
